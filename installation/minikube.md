@@ -62,6 +62,8 @@ minikube version
 minikube start --docker-env http_proxy=http://192.168.31.152:8123 --docker-env https_proxy=http://192.168.31.152:8123 --docker-env no_proxy=localhost,127.0.0.1,::1,192.168.31.0/24,192.168.99.0/24
 ```
 
+> 192.168.31.152是可以通过`minikube ssh`登录到k8s后，执行`netstat -r`可以看到网关地址！！
+
 如果有全局翻墙，就可以简单的`minikube start`启动。
 
 > 注意：这里的代理一定要是http代理，因此不能直接输入shadowsocks的地址，要用pilipo提供的http代理，而且要设置pilipo的proxyAddress，不能只监听127.0.0.1．
